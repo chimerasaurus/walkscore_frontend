@@ -8,4 +8,8 @@ setup(name='walkscore_frontend',
     author_email='jamalone@gmail.com',
     license='MIT',
     packages=['walkscore_frontend'],
+    install_requires=[
+        'bs4',
+        'requests'
+    ],
     zip_safe=False)
