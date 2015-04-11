@@ -12,4 +12,6 @@ setup(name='walkscore_frontend',
         'beautifulsoup4',
         'requests'
     ],
+    test_suite='nose.collector',
+    tests_require=['nose'],
     zip_safe=False)
