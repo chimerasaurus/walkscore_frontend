@@ -17,6 +17,7 @@ from bs4 import BeautifulSoup
 import json
 import re
 import requests
+from utils import *
 from walkscore_frontend.wslocation import City
 from walkscore_frontend.wslocation import Neighborhood
 
@@ -64,7 +65,7 @@ def data_for_neighborhood(name, city, state):
 
     # Merge the hashes
     neighborhood_data = merge_dicts(neighborhood_basics, neighborhood_base_data, nh_json_data)
-    neighborhood_data = remove_unneeded_elements(neighborhood_data)
+    neighborhood_data = remove_unneeded_elements(neighborhood_data, attributes_to_remove)
 
     return neighborhood_data
 
@@ -88,7 +89,7 @@ def data_for_city(name, state):
 
     # Merge the hashes
     city_data = merge_dicts(base_city_data, json_city_data, city_basics)
-    city_data = remove_unneeded_elements(city_data)
+    city_data = remove_unneeded_elements(city_data, attributes_to_remove)
 
     return city_data
 
@@ -111,18 +112,11 @@ def parse_data_points(html):
                 parsed_data[data_attribute] = value
     return parsed_data
 
-def remove_unneeded_elements(dict_to_clean):
+def remove_unneeded_elements(dict_to_clean, attrs_to_remove):
     """Pop unneeded elements from the given dictionary."""
-    for key in attributes_to_remove:
+    for key in attrs_to_remove:
         dict_to_clean.pop(key)
     return dict_to_clean
-
-def merge_dicts(*dicts):
-    """Merge dictionaries together."""
-    return_dict = dict()
-    for d in dicts:
-        return_dict.update(d)
-    return return_dict
 
 def get_page_data(url):
     """Get the page data from the Walkscore website."""
