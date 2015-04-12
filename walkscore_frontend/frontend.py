@@ -112,12 +112,6 @@ def parse_data_points(html):
                 parsed_data[data_attribute] = value
     return parsed_data
 
-def remove_unneeded_elements(dict_to_clean, attrs_to_remove):
-    """Pop unneeded elements from the given dictionary."""
-    for key in attrs_to_remove:
-        dict_to_clean.pop(key)
-    return dict_to_clean
-
 def get_page_data(url):
     """Get the page data from the Walkscore website."""
     r = requests.get(url)
