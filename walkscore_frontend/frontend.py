@@ -43,6 +43,15 @@ regex_filters = {
 }
 attributes_to_remove = ['walkscore','path', 'key', 'thumb', 'page', 'title', 'slug']
 
+def city(name, state):
+    """Return a City object with data for this city"""
+    city_data = data_for_city(name, state)
+    return City(city_data)
+
+def neighborhood(name, city, state):
+    """Return a Neighborhood object with data for this neighborhood"""
+    nh_data = data_for_neighborhood(name, city, state)
+    return Neighborhood(nh_data)
 
 def data_for_neighborhood(name, city, state):
     """Get the Walkscore data for the given neighborhood."""
@@ -90,7 +99,6 @@ def data_for_city(name, state):
     city_data = remove_unneeded_elements(city_data, attributes_to_remove)
 
     return city_data
-
 
 def parse_data_points(html):
     """Parse the page data and look for expected contents based on regular expressions."""

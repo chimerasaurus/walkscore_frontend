@@ -79,15 +79,71 @@ class TestWalkscoreFrontend(unittest.TestCase):
         self.assertEqual(neighborhood_data['lat'], 47.6165)
         self.assertEqual(neighborhood_data['lng'], -122.337)
         self.assertGreaterEqual(neighborhood_data['date'], 1423966838)
+        
+        
+    def test_city(self):
+        """
+        Test the city method.
+        :return: Pass if a City object is created with valid data
+        """
+        # Input params
+        city = 'Seattle'
+        state = 'WA'
+        
+        # Get the City
+        seattle = walkscore_frontend.city(city, state)
+        
+        # Valide a City object is returned
+        assert isinstance(seattle, walkscore_frontend.City)
+        
+        # Validate the basic city data looks valid
+        self.assertEqual(seattle.name, city)
+        self.assertEqual(seattle.state, state)
+        self.assertIn(seattle.walk_score, range(1, 100))
+        self.assertIn(seattle.bike_score, range(1, 100))
+        self.assertIn(seattle.transit_score, range(1, 100))
+        self.assertIn(len(seattle.neighborhoods), range(90, 120))
+        self.assertGreater(seattle.population, 600000)
+        self.assertIn(seattle.restaurant_average, range(1, 4))
+        self.assertIn(seattle.restaurants, range(2000, 5000))
 
-class TestCity(unittest.TestCase):
+        # Validate the JSON data
+        self.assertEqual(seattle.lat, 47.6202)
+        self.assertEqual(seattle.lng, -122.351)
+        self.assertGreaterEqual(seattle.date, 1423966612)
+        
+    
+    def test_neighborhood(self):
+        """
+        Test the neighborhood method.
+        :return: Pass if the method is working properly
+        """
+        # Input params
+        city = 'Seattle'
+        state = 'WA'
+        neighborhood = 'Denny Triangle'
 
-    def test_city_creation(self):
-        city_data = walkscore_frontend.data_for_city('Seattle', 'WA')
-        c = walkscore_frontend.City(city_data)
+        # Get the data
+        denny_tri = walkscore_frontend.neighborhood(neighborhood, city, state)
 
-        # Validate the basic city data
-        self.assertEqual(c.name, 'Seattle')
+        # Valide a City object is returned
+        assert isinstance(denny_tri, walkscore_frontend.Neighborhood)
+
+        # Validate the basic neighborhood data looks valid
+        self.assertEqual(denny_tri.name, neighborhood)
+        self.assertEqual(denny_tri.city, city)
+        self.assertEqual(denny_tri.state, state)
+        self.assertIn(denny_tri.walk_score, range(1, 101))
+        self.assertIn(denny_tri.bike_score, range(1, 101))
+        self.assertIn(denny_tri.transit_score, range(1, 101))
+        self.assertGreater(denny_tri.population, 3000)
+        self.assertIn(denny_tri.restaurant_average, range(20, 50))
+        self.assertIn(denny_tri.restaurants, range(200, 500))
+
+        # Validate JSON data
+        self.assertEqual(denny_tri.lat, 47.6165)
+        self.assertEqual(denny_tri.lng, -122.337)
+        self.assertGreaterEqual(denny_tri.date, 1423966838)
 
 if __name__ == '__main__':
     unittest.main()
