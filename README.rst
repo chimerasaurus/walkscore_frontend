@@ -8,6 +8,25 @@ This wrapper scrapes data from the web UI to provide more granular data than is 
 
 Please note, **this module is for educational purposes only.**
 
+Installation
+--------
+You can install this module via pip::
+
+ pip install walkscore-api-binding
+
+Alternatively, you can install the latest from this repository::
+
+ git clone git@github.com:evilsoapbox/walkscore_frontend.git
+ python setup.py install
+
+Dependencies
+~~~~~~~~~~~~~~~~~~~~~~
+This module requires the following libraries to function.
+
+* requests
+* BeautifulSoup4
+* nose
+
 Usage
 --------
 Use this module via reference, such as::
@@ -21,7 +40,7 @@ You can then call a number of functions to pull data:
 * ``data_for_neighborhood(name, city, state)``
 
 Definitions
---------
+~~~~~~~~~~~~~~~~~~~~~~
 There are a few key terms and concepts used in this wrapper and the Walkscore website.
 
 State
