@@ -11,3 +11,6 @@
 
 # Virtualenv
 /env/
+
+# Setuptools build folder
+/build/
