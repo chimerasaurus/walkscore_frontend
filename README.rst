@@ -12,8 +12,8 @@ Usage
 --------
 Use this module via reference, such as::
 
- import walkscore_wrapper
- wrapper = walkscore_wrapper()
+ import walkscore_frontend
+ wrapper = walkscore_frontend()
 
 You can then call a number of functions to pull data:
 
