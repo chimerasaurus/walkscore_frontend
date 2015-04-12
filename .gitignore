@@ -14,3 +14,6 @@
 
 # Setuptools build folder
 /build/
+
+# Cloude9 IDE folder
+*.c9/

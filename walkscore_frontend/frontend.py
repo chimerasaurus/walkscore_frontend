@@ -13,9 +13,9 @@ __email__ = 'jamalone at gmail dot com'
 __status__ = "Development"
 
 # Packages needed for this module
-from http import *
-from regex import *
-from utils import *
+from walkscore_frontend.http import *
+from walkscore_frontend.regex import *
+from walkscore_frontend.utils import *
 from walkscore_frontend.wslocation import City
 from walkscore_frontend.wslocation import Neighborhood
 

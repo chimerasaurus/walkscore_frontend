@@ -9,9 +9,9 @@ __maintainer__ = "James Malone"
 __email__ = 'jamalone at gmail dot com'
 __status__ = "Development"
 
-import walkscore_frontend
 import unittest
-
+from walkscore_frontend import frontend
+from walkscore_frontend import wslocation
 
 class TestWalkscoreFrontend(unittest.TestCase):
 
@@ -26,7 +26,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         # Input params
         city = 'Seattle'
         state = 'WA'
-        city_data = walkscore_frontend.data_for_city(city, state)
+        city_data = frontend.data_for_city(city, state)
 
         # Validate the hash is not null
         self.assertTrue(city_data is not None)
@@ -59,7 +59,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         neighborhood = 'Denny Triangle'
 
         # Get the data
-        neighborhood_data = walkscore_frontend.data_for_neighborhood(neighborhood, city, state)
+        neighborhood_data = frontend.data_for_neighborhood(neighborhood, city, state)
 
         # Validate the hash is not null
         self.assertTrue(neighborhood_data is not None)
@@ -91,10 +91,10 @@ class TestWalkscoreFrontend(unittest.TestCase):
         state = 'WA'
         
         # Get the City
-        seattle = walkscore_frontend.city(city, state)
+        seattle = frontend.city(city, state)
         
         # Valide a City object is returned
-        assert isinstance(seattle, walkscore_frontend.City)
+        assert isinstance(seattle, wslocation.City)
         
         # Validate the basic city data looks valid
         self.assertEqual(seattle.name, city)
@@ -124,10 +124,10 @@ class TestWalkscoreFrontend(unittest.TestCase):
         neighborhood = 'Denny Triangle'
 
         # Get the data
-        denny_tri = walkscore_frontend.neighborhood(neighborhood, city, state)
+        denny_tri = frontend.neighborhood(neighborhood, city, state)
 
         # Valide a City object is returned
-        assert isinstance(denny_tri, walkscore_frontend.Neighborhood)
+        assert isinstance(denny_tri, wslocation.Neighborhood)
 
         # Validate the basic neighborhood data looks valid
         self.assertEqual(denny_tri.name, neighborhood)
