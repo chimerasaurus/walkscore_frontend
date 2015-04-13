@@ -48,6 +48,20 @@ class TestWalkscoreFrontend(unittest.TestCase):
         self.assertEqual(city_data['lat'], 47.6202)
         self.assertEqual(city_data['lng'], -122.351)
         self.assertGreaterEqual(city_data['date'], 1423966612)
+        
+    def test_data_for_city_bogus_data(self):
+        """
+        Test the data_for_city method with invalud inputs.
+        
+        :return: Pass if the method fails properly
+        """
+        # Input params
+        city = 'Bogus'
+        state = 'City12345'
+        city_data = data_for_city(city, state)
+
+        # Validate the hash is not null
+        self.assertTrue(city_data is None)
 
 
     def test_data_for_neighborhood(self):
@@ -83,7 +97,25 @@ class TestWalkscoreFrontend(unittest.TestCase):
         self.assertEqual(neighborhood_data['lng'], -122.337)
         self.assertGreaterEqual(neighborhood_data['date'], 1423966838)
         
+    
+    def test_data_for_neighborhood_bogus_data(self):
+        """
+        Test the data_for_neighborhood method with bogus data.
         
+        :return: Pass if the method is fails properly
+        """
+        # Input params
+        city = 'Bogus'
+        state = 'City'
+        neighborhood = 'Bad Place'
+
+        # Get the data
+        neighborhood_data = data_for_neighborhood(neighborhood, city, state)
+
+        # Validate the hash is not null
+        self.assertTrue(neighborhood_data is None)
+
+    
     def test_city(self):
         """
         Test the city method.
@@ -148,6 +180,3 @@ class TestWalkscoreFrontend(unittest.TestCase):
         self.assertEqual(denny_tri.lat, 47.6165)
         self.assertEqual(denny_tri.lng, -122.337)
         self.assertGreaterEqual(denny_tri.date, 1423966838)
-
-if __name__ == '__main__':
-    unittest.main()

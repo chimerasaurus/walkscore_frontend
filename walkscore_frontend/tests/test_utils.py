@@ -40,7 +40,3 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(2, len(clean_dict.keys()))
         self.assertEqual(True, clean_dict['b'])
         self.assertEqual('False', clean_dict['d'])
-        
-
-if __name__ == '__main__':
-    unittest.main()

@@ -46,7 +46,3 @@ class TestHttp(unittest.TestCase):
         # Test a bogus URL
         with self.assertRaises(Exception):
             bad_data = get_json_data(self.bad_url)
-
-
-if __name__ == '__main__':
-    unittest.main()
