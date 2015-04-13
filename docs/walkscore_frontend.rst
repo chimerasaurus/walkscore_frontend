@@ -27,14 +27,6 @@ walkscore_frontend.regex module
     :undoc-members:
     :show-inheritance:
 
-walkscore_frontend.setup module
--------------------------------
-
-.. automodule:: walkscore_frontend.setup
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 walkscore_frontend.utils module
 -------------------------------
 
