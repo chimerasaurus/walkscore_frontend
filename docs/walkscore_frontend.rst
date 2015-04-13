@@ -1,43 +1,40 @@
-walkscore_frontend package
+Walkscore Frontend Modules
 ==========================
 
-Submodules
+frontend
 ----------
-
-walkscore_frontend.frontend module
-----------------------------------
 
 .. automodule:: walkscore_frontend.frontend
     :members:
     :undoc-members:
     :show-inheritance:
 
-walkscore_frontend.http module
-------------------------------
+http
+----------
 
 .. automodule:: walkscore_frontend.http
     :members:
     :undoc-members:
     :show-inheritance:
 
-walkscore_frontend.regex module
--------------------------------
+regex
+-----------
 
 .. automodule:: walkscore_frontend.regex
     :members:
     :undoc-members:
     :show-inheritance:
 
-walkscore_frontend.utils module
--------------------------------
+utils
+-----------
 
 .. automodule:: walkscore_frontend.utils
     :members:
     :undoc-members:
     :show-inheritance:
 
-walkscore_frontend.wslocation module
-------------------------------------
+wslocation
+------------
 
 .. automodule:: walkscore_frontend.wslocation
     :members:
