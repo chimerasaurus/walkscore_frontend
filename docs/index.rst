@@ -10,9 +10,6 @@ Contents:
  
 .. toctree::
    :maxdepth: 2
- 
-.. automodule:: frontend
-   :members:
 
 
 Indices and tables
