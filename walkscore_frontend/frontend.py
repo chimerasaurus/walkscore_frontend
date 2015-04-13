@@ -1,8 +1,8 @@
 """
 Module to obtain data from the Walkscore website.
-In my opinion, the Walkscore API is too limited for educational data gathering and related projects. This module
-is designed to make it easier to scrape data from Walkscore.
-This module is intended for educational and research purposes only.
+In my opinion, the Walkscore API is too limited for educational data gathering
+and related projects. This module is designed to make it easier to scrape data
+from Walkscore. This module is for educational and research purposes only.
 """
 
 __author__ = 'James Malone'
