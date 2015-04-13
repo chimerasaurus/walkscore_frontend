@@ -89,7 +89,6 @@ def regex_page_data_table(pattern, content):
     attributes = pattern.split('=')
     table_data = []
     table = BeautifulSoup(content).find("table", attrs={attributes[0]:attributes[1]})
-
     if table is not None:
         headings = [th.get_text() for th in table.find("tr").find_all("th")]
         for idx, item in enumerate(headings): # Format the headings

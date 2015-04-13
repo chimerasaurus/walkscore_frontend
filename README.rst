@@ -8,7 +8,7 @@
  :target: https://coveralls.io/r/evilsoapbox/walkscore_frontend?branch=master
 
 .. image:: https://codeclimate.com/github/evilsoapbox/walkscore_frontend/badges/gpa.svg
- :target: https://codeclimate.com/github/evilsoapbox/walkscore_frontend]
+ :target: https://codeclimate.com/github/evilsoapbox/walkscore_frontend
 
 
 ****************************************

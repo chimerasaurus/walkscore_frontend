@@ -43,10 +43,3 @@ walkscore_frontend.wslocation module
     :members:
     :undoc-members:
     :show-inheritance:
-
-Subpackages
------------
-
-.. toctree::
-
-    walkscore_frontend.tests

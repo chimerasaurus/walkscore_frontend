@@ -17,6 +17,7 @@ class TestHttp(unittest.TestCase):
         self.good_url = 'http://www.walkscore.com/WA/Seattle'
         self.bad_url = 'https://www.walkscore.com/fdfadsfdfdsfdas'
         self.good_json_url = 'https://www.walkscore.com/auth/_pv/city_page/WA/Seattle?d=current'
+        self.bad_json_url = self.bad_url
 
     def test_get_page_data(self):
         """
@@ -25,12 +26,11 @@ class TestHttp(unittest.TestCase):
         :return: Pass if URLs are handled properly
         """
         # Test a valid URL
-        good_data = get_page_data(self.good_url)
-        self.assertTrue(good_data is not None)
+        self.assertTrue(get_page_data(self.good_url) is not None)
         
         # Test a bogus URL
         with self.assertRaises(Exception):
-            bad_data = get_page_data(self.bad_url)
+            get_page_data(self.bad_url)
             
     def test_get_json_data(self):
         """
@@ -40,9 +40,8 @@ class TestHttp(unittest.TestCase):
         :return: Pass if URLs are handled properly
         """
         # Test a valid URL
-        good_json_data = get_json_data(self.good_json_url)
-        self.assertTrue(good_json_data is not None)
+        self.assertTrue(get_json_data(self.good_json_url) is not None)
         
         # Test a bogus URL
         with self.assertRaises(Exception):
-            bad_json_data = get_json_data(self.bad_url)
+            get_json_data(self.bad_json_url)
