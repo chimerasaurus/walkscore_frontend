@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.4"
+  - "3.3"
+  - "2.7"
+  - "2.6"
+install:
+  - pip install requests
+  - pip install beautifulsoup4
+  - pip install python-coveralls
+  - pip install coverage       # Add me to install coverage.py
+  - pip install nose           # Add me to install nose
+script:
+  - python setup.py install 
+  - nosetests --with-coverage

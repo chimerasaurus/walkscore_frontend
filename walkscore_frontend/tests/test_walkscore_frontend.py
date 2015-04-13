@@ -22,6 +22,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
     def test_data_for_city(self):
         """
         Test the data_for_city method.
+        
         :return: Pass if the method is working properly
         """
         # Input params
@@ -52,6 +53,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
     def test_data_for_neighborhood(self):
         """
         Test the data_for_neighborhood method.
+        
         :return: Pass if the method is working properly
         """
         # Input params
@@ -85,6 +87,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
     def test_city(self):
         """
         Test the city method.
+        
         :return: Pass if a City object is created with valid data
         """
         # Input params

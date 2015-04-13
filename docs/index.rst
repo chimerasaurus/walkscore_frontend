@@ -9,7 +9,8 @@ Walkscore Frontend
 .. note::  This module is under **active development** so things will change.
 
 
-Contents:
+Contents
+==================
  
 .. toctree::
    :maxdepth: 2
@@ -21,11 +22,12 @@ You can find this module on
 `GitHub <https://github.com/evilsoapbox/walkscore_frontend>`_ or 
 `PyPi <https://pypi.python.org/pypi?:action=display&name=walkscore_frontend/>`_.
 
-Badges:
+Badges
+==================
 
 .. image:: https://readthedocs.org/projects/walkscore-frontend/badge/?version=latest
-:target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
-:alt: Documentation Status
+   :target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
+   :alt: Documentation Status
 
 Indices and tables
 ==================

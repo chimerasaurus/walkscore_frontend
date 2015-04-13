@@ -10,7 +10,8 @@ setup(name='walkscore_frontend',
     packages=['walkscore_frontend'],
     install_requires=[
         'beautifulsoup4',
-        'requests'
+        'requests',
+        'python-coveralls'
     ],
     test_suite='nose.collector',
     tests_require=['nose'],
