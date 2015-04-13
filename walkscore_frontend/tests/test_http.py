@@ -29,7 +29,9 @@ class TestHttp(unittest.TestCase):
         self.assertTrue(get_page_data(self.good_url) is not None)
         self.assertTrue(get_json_data(self.good_json_url) is not None)
         
-        # Test a bogus URL
+        # Test bogus URLs
         with self.assertRaises(Exception):
             get_page_data(self.bad_url)
+        
+        with self.assertRaises(Exception):
             get_json_data(self.bad_json_url)
