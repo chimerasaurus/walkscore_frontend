@@ -36,18 +36,15 @@ def parse_data_points(content):
     """
     parsed_data = {}
     for data_type in regex_filters.keys():
-        if data_type == 'int':
-            for data_attribute in regex_filters[data_type].keys():
+        for data_attribute in regex_filters[data_type].keys():
+            value = None
+            if data_type == 'int':
                 value = regex_page_data_int(regex_filters[data_type][data_attribute], content)
-                parsed_data[data_attribute] = value
-        elif data_type == 'float':
-            for data_attribute in regex_filters[data_type].keys():
+            elif data_type == 'float':
                 value = regex_page_data_float(regex_filters[data_type][data_attribute], content)
-                parsed_data[data_attribute] = value
-        elif data_type == 'table':
-            for data_attribute in regex_filters[data_type].keys():
+            elif data_type == 'table':
                 value = regex_page_data_table(regex_filters[data_type][data_attribute], content)
-                parsed_data[data_attribute] = value
+            parsed_data[data_attribute] = value
     return parsed_data
 
 def regex_page_data_int(pattern, content):
@@ -61,8 +58,6 @@ def regex_page_data_int(pattern, content):
     """
     result = regex_page_data(pattern, content)
     if result is not None:
-        if ',' in result:
-            result = result.replace(',', '')
         result = int(result)
     return result
 
@@ -78,8 +73,6 @@ def regex_page_data_float(pattern, content):
     """
     result = regex_page_data(pattern, content)
     if result is not None:
-        if ',' in result:
-            result = result.replace(',', '')
         result = float(result)
     return result
 
@@ -135,8 +128,10 @@ def regex_page_data(pattern, content):
     :rtype: object
     """
     
-    result = re.search(pattern, content)
+    result = re.search(pattern, content).group(1)
     if result is not None:
-        return result.group(1)
+        if ',' in result:
+            result = result.replace(',', '')
+        return result
     else:
         return None
