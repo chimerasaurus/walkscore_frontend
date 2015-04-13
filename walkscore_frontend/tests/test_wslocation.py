@@ -20,7 +20,7 @@ class TestWsLocation(unittest.TestCase):
         self.simple_city_test_payload = {'name': 'Seattle', 'state': 'WA'}
         self.simple_nh_test_payload = {'name': 'Denny Triangle', 'city': 'Seattle', 'state': 'WA'}
 
-    def test_simple_creation(self):
+    def test_wslocation_creation(self):
         """
         Test the creation of a simple WsLocation
         
@@ -30,19 +30,21 @@ class TestWsLocation(unittest.TestCase):
         self.assertTrue(ws_loc is not None)
         self.assertTrue(ws_loc.name == 'Seattle')
         self.assertTrue(ws_loc.state == 'WA')
-        self.assertRaises(AttributeError, getattr, ws_loc, "bad_attribute")
+        self.assertRaises(AttributeError, getattr, ws_loc, "invalid_attribute")
         
+
     def test_city_creation(self):
         """
-        Test the creation of a simple test_city_creation
+        Test the creation of a simple City object
         
         :return: Pass if the city is created OK
         """
         city = City(self.simple_city_test_payload)
         self.assertTrue(city is not None)
+        self.assertRaises(AttributeError, getattr, city, "bad_attribute")
         self.assertTrue(city.name == 'Seattle')
         self.assertTrue(city.state == 'WA')
-        self.assertRaises(AttributeError, getattr, city, "bad_attribute")
+
 
     def test_nh_creation(self):
         """

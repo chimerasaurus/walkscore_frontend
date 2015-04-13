@@ -40,9 +40,9 @@ class TestHttp(unittest.TestCase):
         :return: Pass if URLs are handled properly
         """
         # Test a valid URL
-        good_data = get_json_data(self.good_json_url)
-        self.assertTrue(good_data is not None)
+        good_json_data = get_json_data(self.good_json_url)
+        self.assertTrue(good_json_data is not None)
         
         # Test a bogus URL
         with self.assertRaises(Exception):
-            bad_data = get_json_data(self.bad_url)
+            bad_json_data = get_json_data(self.bad_url)

@@ -53,13 +53,13 @@ def regex_page_data_int(pattern, content):
     
     :param pattern: regex pattern to match against
     :param content: content to search
-    :returns: first result for the given match
+    :returns: first int result for the given match
     :rtype: int
     """
-    result = regex_page_data(pattern, content)
-    if result is not None:
-        result = int(result)
-    return result
+    int_result = regex_page_data(pattern, content)
+    if int_result is not None:
+        int_result = int(int_result)
+    return int_result
 
 
 def regex_page_data_float(pattern, content):
@@ -68,13 +68,13 @@ def regex_page_data_float(pattern, content):
     
     :param pattern: regex pattern to match against
     :param content: content to search
-    :returns: first result for the given match
+    :returns: first float result for the given match
     :rtype: float
     """
-    result = regex_page_data(pattern, content)
-    if result is not None:
-        result = float(result)
-    return result
+    float_result = regex_page_data(pattern, content)
+    if float_result is not None:
+        float_result = float(float_result)
+    return float_result
 
 
 def regex_page_data_table(pattern, content):
@@ -86,32 +86,24 @@ def regex_page_data_table(pattern, content):
     :returns: array of data from the table
     :rtype: string array
     """
-    soup = BeautifulSoup(content)
     attributes = pattern.split('=')
     table_data = []
-    table = soup.find("table", attrs={attributes[0]:attributes[1]})
+    table = BeautifulSoup(content).find("table", attrs={attributes[0]:attributes[1]})
 
     if table is not None:
         headings = [th.get_text() for th in table.find("tr").find_all("th")]
-
-        # Format the headings
-        for idx, item in enumerate(headings):
+        for idx, item in enumerate(headings): # Format the headings
             headings[idx] = re.sub('[!@#$]', '', item.lower().replace(' ', '_'))
-
-        # Iterate the table and parse the data
-        for row in table.findAll("tr")[1:]:
+        for row in table.findAll("tr")[1:]: # Iterate the table and parse the data
             cells = row.findAll("td")
             row_data = {}
             for i in range(0, len(cells) -1):
-                row_data[headings[i]] = cells[i].get_text()
-
-                # Look for links which do not match the text and fix them
+                row_data[headings[i]] = cells[i].get_text() # Fix mismatched links
                 cell_link = cells[i].find('a')
                 if cell_link is not None:
                     last_element = cell_link.get('href').split('/')[-1]
                     if last_element.replace('_', ' ') != row_data[headings[i]]:
                         row_data[headings[i]] = last_element.replace('_', ' ')
-
             table_data.append(row_data)
         return table_data
     else:
@@ -128,8 +120,9 @@ def regex_page_data(pattern, content):
     :rtype: object
     """
     
-    result = re.search(pattern, content).group(1)
+    result = re.search(pattern, content)
     if result is not None:
+        result = result.group(1)
         if ',' in result:
             result = result.replace(',', '')
         return result

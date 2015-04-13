@@ -12,6 +12,7 @@ class TestUtils(unittest.TestCase):
     def setUp(self):
         """
         Setup the unit tests
+        
         :return: Items needed for unit testing
         """
         self.test_dict_1 = {'a': 1, 'b': '2'}
