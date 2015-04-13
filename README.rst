@@ -1,6 +1,6 @@
-========
+****************************************
 Walkscore Frontend
-========
+****************************************
 
 Wrapper front-end on the Walkscore website designed to make scraping data from Walkscore easier. While
 Walkscore has its own API, it is limited and only returns some of the data available through the web UI.
@@ -8,8 +8,10 @@ This wrapper scrapes data from the web UI to provide more granular data than is 
 
 Please note, **this module is for educational purposes only.**
 
+---------------
 Installation
---------
+---------------
+
 You can install this module via pip::
 
  pip install walkscore-api-binding
@@ -61,4 +63,4 @@ TODO
 
 :Author: 
   James Malone
-:Version: 0.1 of 2015/05/11
+:Version: 0.2 of 2015/05/12
