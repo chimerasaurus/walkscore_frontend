@@ -38,6 +38,7 @@ This module requires the following libraries to function.
 * requests
 * BeautifulSoup4
 * nose
+* python-coveralls
 
 ---------------
 Usage

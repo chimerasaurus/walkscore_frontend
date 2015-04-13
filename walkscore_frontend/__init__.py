@@ -5,7 +5,7 @@ limited API. Returns data about cities and neighborhoods from Walkscore.
 
 __author__ = 'James Malone'
 __license__ = "MIT"
-__version__ = "0.2"
+__version__ = "0.3"
 __maintainer__ = "James Malone"
 __email__ = 'jamalone at gmail dot com'
 __status__ = "Development"
@@ -17,24 +17,6 @@ from walkscore_frontend.utils import *
 from walkscore_frontend.wslocation import City
 from walkscore_frontend.wslocation import Neighborhood
 
-regex_filters = {
-    'int':
-        {
-            'walk_score': '\/\/pp.walk.sc\/badge\/walk\/score\/(\d+)\.svg',
-            'transit_score': '\/\/pp.walk.sc\/badge\/transit\/score\/(\d+)\.svg',
-            'bike_score': '\/\/pp.walk.sc\/badge\/bike\/score\/(\d+)\.svg',
-            'population': 'with\s+(\S+)\s+residents',
-            'restaurants': 'about\s+(\S+)\s+restaurants'
-        },
-    'float':
-        {
-            'restaurant_average': 'average\s+of\s+(\S+)\s+restaurants',
-        },
-    'table':
-        {
-            'neighborhoods': 'id=hoods-list-table',
-        },
-}
 attributes_to_remove = ['walkscore','path', 'key', 'thumb', 'page', 'title', 'slug']
 
 def get_city(city, state):
@@ -124,22 +106,3 @@ def data_for_neighborhood(neighborhood, city, state):
     neighborhood_data = remove_unneeded_elements(neighborhood_data, attributes_to_remove)
 
     return neighborhood_data
-
-
-def parse_data_points(html):
-    """Parse the page data and look for expected contents based on regular expressions."""
-    parsed_data = {}
-    for data_type in regex_filters.keys():
-        if data_type == 'int':
-            for data_attribute in regex_filters[data_type].keys():
-                value = regex_page_data_int(regex_filters[data_type][data_attribute], html)
-                parsed_data[data_attribute] = value
-        elif data_type == 'float':
-            for data_attribute in regex_filters[data_type].keys():
-                value = regex_page_data_float(regex_filters[data_type][data_attribute], html)
-                parsed_data[data_attribute] = value
-        elif data_type == 'table':
-            for data_attribute in regex_filters[data_type].keys():
-                value = regex_page_data_table(regex_filters[data_type][data_attribute], html)
-                parsed_data[data_attribute] = value
-    return parsed_data

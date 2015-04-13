@@ -6,6 +6,50 @@ Handles regular expression (regex) parsing for the walkscore_frontend module.
 from bs4 import BeautifulSoup
 import re
 
+# Constants for thos module
+regex_filters = {
+    'int':
+        {
+            'walk_score': '\/\/pp.walk.sc\/badge\/walk\/score\/(\d+)\.svg',
+            'transit_score': '\/\/pp.walk.sc\/badge\/transit\/score\/(\d+)\.svg',
+            'bike_score': '\/\/pp.walk.sc\/badge\/bike\/score\/(\d+)\.svg',
+            'population': 'with\s+(\S+)\s+residents',
+            'restaurants': 'about\s+(\S+)\s+restaurants'
+        },
+    'float':
+        {
+            'restaurant_average': 'average\s+of\s+(\S+)\s+restaurants',
+        },
+    'table':
+        {
+            'neighborhoods': 'id=hoods-list-table',
+        },
+}
+
+def parse_data_points(content):
+    """
+    Parse the page data and look for expected contents based on regular expressions.
+    
+    :param content: content to search
+    :returns: parsed data based on the built-in regex searches
+    :rtype: dict
+    """
+    parsed_data = {}
+    for data_type in regex_filters.keys():
+        if data_type == 'int':
+            for data_attribute in regex_filters[data_type].keys():
+                value = regex_page_data_int(regex_filters[data_type][data_attribute], content)
+                parsed_data[data_attribute] = value
+        elif data_type == 'float':
+            for data_attribute in regex_filters[data_type].keys():
+                value = regex_page_data_float(regex_filters[data_type][data_attribute], content)
+                parsed_data[data_attribute] = value
+        elif data_type == 'table':
+            for data_attribute in regex_filters[data_type].keys():
+                value = regex_page_data_table(regex_filters[data_type][data_attribute], content)
+                parsed_data[data_attribute] = value
+    return parsed_data
+
 def regex_page_data_int(pattern, content):
     """
     Extract an integer value from the text based on a pattern.

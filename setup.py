@@ -7,7 +7,7 @@ def readme():
 
 # Setup metadata
 setup(name='walkscore_frontend',
-    version='0.2',
+    version='0.3',
     description='Front-end (scraper API) for the Walkscore website',
     long_description=readme(),
     url='http://github.com/evilsoapbox/walkscore_frontend',
@@ -27,7 +27,7 @@ setup(name='walkscore_frontend',
     install_requires=[
         'beautifulsoup4',
         'requests',
-        'nose'
+        'nose',
     ],
     include_package_data=True,
     zip_safe=False)
