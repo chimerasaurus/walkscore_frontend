@@ -8,6 +8,10 @@ This wrapper scrapes data from the web UI to provide more granular data than is 
 
 Please note, **this module is for educational purposes only.**
 
+.. image:: https://readthedocs.org/projects/walkscore-frontend/badge/?version=latest
+ :target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
+ :alt: Documentation Status
+
 ---------------
 Installation
 ---------------
@@ -29,8 +33,10 @@ This module requires the following libraries to function.
 * BeautifulSoup4
 * nose
 
+---------------
 Usage
---------
+---------------
+
 Use this module via reference, such as::
 
  import walkscore_frontend
@@ -54,13 +60,11 @@ City
 Neighborhood
   A section within a city. Generally cities contain one or more neighborhoods.
 
+Documentation
+~~~~~~~~~~~~~~~~~~~~~~
+Better documentation for this project is available at `ReadTheDocs <http://walkscore-frontend.readthedocs.org/en/latest/index.html>`_ 
+
 TODO
 --------
 * **Better errorhandling** - Add better error and exception handling
 * **Support for "simple" pages** - Some Walkscore cities and pages have a new and/or simple layout
-* **Better documentation** - Add better documentation inside and outside of the code
-* **Seperate code** - Better seperation of code in the module
-
-:Author: 
-  James Malone
-:Version: 0.2 of 2015/05/12
