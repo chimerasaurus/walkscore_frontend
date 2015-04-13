@@ -2,10 +2,10 @@
  :target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
  
 .. image:: https://travis-ci.org/evilsoapbox/walkscore_frontend.svg?branch=master
-:target: https://travis-ci.org/evilsoapbox/walkscore_frontend
+ :target: https://travis-ci.org/evilsoapbox/walkscore_frontend
  
 .. image:: https://coveralls.io/repos/evilsoapbox/walkscore_frontend/badge.svg?branch=master
-:target: https://coveralls.io/r/evilsoapbox/walkscore_frontend?branch=master
+ :target: https://coveralls.io/r/evilsoapbox/walkscore_frontend?branch=master
 
 ****************************************
 Walkscore Frontend
