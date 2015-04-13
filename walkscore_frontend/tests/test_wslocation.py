@@ -26,12 +26,12 @@ class TestWsLocation(unittest.TestCase):
         
         :return: OK if all unit tests pass
         """
-        ws_loc = WsLocation(self.simple_city_test_payload)
+        ws_loc = WsLocation(self.simple_city_test_payload, {'population': 100000})
         self.assertTrue(ws_loc is not None)
         self.assertTrue(ws_loc.name == 'Seattle')
         self.assertTrue(ws_loc.state == 'WA')
         self.assertRaises(AttributeError, getattr, ws_loc, "invalid_attribute")
-        
+        self.assertEqual(ws_loc.population, 100000)
 
     def test_city_creation(self):
         """
