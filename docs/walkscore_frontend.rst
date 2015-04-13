@@ -1,12 +1,13 @@
 Modules & Methods
 ==========================
 
-Subpackages
------------
+Primary methods for walkscore frontend
+----------
 
-.. toctree::
-
-    walkscore_frontend.tests
+.. automodule:: walkscore_frontend
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 Submodules
 ----------
@@ -43,11 +44,9 @@ walkscore_frontend.wslocation module
     :undoc-members:
     :show-inheritance:
 
+Subpackages
+-----------
 
-Module contents
----------------
+.. toctree::
 
-.. automodule:: walkscore_frontend
-    :members:
-    :undoc-members:
-    :show-inheritance:
+    walkscore_frontend.tests

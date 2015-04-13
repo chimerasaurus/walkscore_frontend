@@ -1,5 +1,6 @@
 """
-Main module 
+Walkscore frontend to interact with the Walkscore website without using the
+limited API. Returns data about cities and neighborhoods from Walkscore.
 """
 
 __author__ = 'James Malone'
@@ -41,12 +42,27 @@ regex_filters = {
 attributes_to_remove = ['walkscore','path', 'key', 'thumb', 'page', 'title', 'slug']
 
 def get_city(name, state):
-    """Return a City object with data for this city"""
+    """
+    Return a City object with data for this city.
+    
+    :param name: Name of the city (such as `Seattle`)
+    :param content: Two-letter code of the state (such as `WA`)
+    :returns: City object with data about the specified city
+    :rtype: City
+    """
     city_data = data_for_city(name, state)
     return City(city_data)
 
 def get_neighborhood(name, city, state):
-    """Return a Neighborhood object with data for this neighborhood"""
+    """
+    Return a Neighborhood object with data for this neighborhood.
+    
+    :param name: Nane of the neighborhood (such as `Denny Triangle`)
+    :param city: Name of the city (such as `Seattle`)
+    :param content: Two-letter code of the state (such as `WA`)
+    :returns: Neighborhood object with data about the specified city
+    :rtype: Neighborhood
+    """
     nh_data = data_for_neighborhood(name, city, state)
     return Neighborhood(nh_data)
 
