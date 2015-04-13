@@ -1,13 +1,6 @@
 """
 Unit tests for the utils module.
 """
-__author__ = 'James Malone'
-__license__ = "MIT"
-__version__ = "0.2"
-__maintainer__ = "James Malone"
-__email__ = 'jamalone at gmail dot com'
-__status__ = "Development"
-
 
 # Imports
 import unittest
@@ -28,6 +21,7 @@ class TestUtils(unittest.TestCase):
     def test_merge_dicts(self):
         """
         Test the merging of two dictionaries
+        
         :return: Pass if the dicts are merged OK
         """
         merged_dict = merge_dicts(self.test_dict_1, self.test_dict_2)
@@ -38,6 +32,7 @@ class TestUtils(unittest.TestCase):
     def test_remove_unneeded_elements(self):
         """
         Test the remove_unneeded_elements method to clean a dict
+        
         :return: Pass if the method cleans the dict properly
         """
         elements_to_remove = ['a', 'c']
