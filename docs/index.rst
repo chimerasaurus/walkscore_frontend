@@ -8,6 +8,18 @@ Walkscore Frontend
 
 .. note::  This module is under **active development** so things will change.
 
+Status
+==================
+
+.. image:: https://readthedocs.org/projects/walkscore-frontend/badge/?version=latest
+   :target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
+   :alt: Documentation Status
+   
+.. image:: https://travis-ci.org/evilsoapbox/walkscore_frontend.svg?branch=master
+    :target: https://travis-ci.org/evilsoapbox/walkscore_frontend
+ 
+.. image:: https://coveralls.io/repos/evilsoapbox/walkscore_frontend/badge.svg?branch=master
+   :target: https://coveralls.io/r/evilsoapbox/walkscore_frontend?branch=master
 
 Contents
 ==================
@@ -21,13 +33,6 @@ Contents
 You can find this module on 
 `GitHub <https://github.com/evilsoapbox/walkscore_frontend>`_ or 
 `PyPi <https://pypi.python.org/pypi?:action=display&name=walkscore_frontend/>`_.
-
-Badges
-==================
-
-.. image:: https://readthedocs.org/projects/walkscore-frontend/badge/?version=latest
-   :target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
-   :alt: Documentation Status
 
 Indices and tables
 ==================
