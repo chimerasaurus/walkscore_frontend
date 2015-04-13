@@ -7,6 +7,10 @@
 .. image:: https://coveralls.io/repos/evilsoapbox/walkscore_frontend/badge.svg?branch=master
  :target: https://coveralls.io/r/evilsoapbox/walkscore_frontend?branch=master
 
+.. image:: https://codeclimate.com/github/evilsoapbox/walkscore_frontend/badges/gpa.svg
+ :target: https://codeclimate.com/github/evilsoapbox/walkscore_frontend]
+
+
 ****************************************
 Walkscore Frontend
 ****************************************
