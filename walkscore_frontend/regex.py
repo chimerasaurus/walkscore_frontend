@@ -84,6 +84,7 @@ def regex_page_data_table(pattern, content):
 def regex_page_data(pattern, content):
     """
     Get a value from page data based on a regex pattern.
+    
     :param pattern: regex pattern to match against
     :param content: content to search
     :returns: first result for the given match

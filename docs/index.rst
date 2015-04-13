@@ -21,6 +21,11 @@ You can find this module on
 `GitHub <https://github.com/evilsoapbox/walkscore_frontend>`_ or 
 `PyPi <https://pypi.python.org/pypi?:action=display&name=walkscore_frontend/>`_.
 
+Badges:
+
+.. image:: https://readthedocs.org/projects/walkscore-frontend/badge/?version=latest
+:target: https://readthedocs.org/projects/walkscore-frontend/?badge=latest
+:alt: Documentation Status
 
 Indices and tables
 ==================

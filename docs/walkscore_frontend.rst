@@ -1,40 +1,50 @@
 Modules & Methods
 ==========================
 
-frontend
+Subpackages
+-----------
+
+.. toctree::
+
+    walkscore_frontend.tests
+
+Submodules
 ----------
 
-.. automodule:: walkscore_frontend.frontend
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-http
-----------
+walkscore_frontend.http module
+------------------------------
 
 .. automodule:: walkscore_frontend.http
     :members:
     :undoc-members:
     :show-inheritance:
 
-regex
------------
+walkscore_frontend.regex module
+-------------------------------
 
 .. automodule:: walkscore_frontend.regex
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils
------------
+walkscore_frontend.setup module
+-------------------------------
+
+.. automodule:: walkscore_frontend.setup
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+walkscore_frontend.utils module
+-------------------------------
 
 .. automodule:: walkscore_frontend.utils
     :members:
     :undoc-members:
     :show-inheritance:
 
-wslocation
-------------
+walkscore_frontend.wslocation module
+------------------------------------
 
 .. automodule:: walkscore_frontend.wslocation
     :members:

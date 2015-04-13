@@ -10,6 +10,7 @@ __email__ = 'jamalone at gmail dot com'
 __status__ = "Development"
 
 import unittest
+from walkscore_frontend import *
 from walkscore_frontend import frontend
 from walkscore_frontend import wslocation
 
@@ -26,7 +27,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         # Input params
         city = 'Seattle'
         state = 'WA'
-        city_data = frontend.data_for_city(city, state)
+        city_data = data_for_city(city, state)
 
         # Validate the hash is not null
         self.assertTrue(city_data is not None)
@@ -59,7 +60,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         neighborhood = 'Denny Triangle'
 
         # Get the data
-        neighborhood_data = frontend.data_for_neighborhood(neighborhood, city, state)
+        neighborhood_data = data_for_neighborhood(neighborhood, city, state)
 
         # Validate the hash is not null
         self.assertTrue(neighborhood_data is not None)
@@ -91,7 +92,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         state = 'WA'
         
         # Get the City
-        seattle = frontend.city(city, state)
+        seattle = get_city(city, state)
         
         # Valide a City object is returned
         assert isinstance(seattle, wslocation.City)
@@ -124,7 +125,7 @@ class TestWalkscoreFrontend(unittest.TestCase):
         neighborhood = 'Denny Triangle'
 
         # Get the data
-        denny_tri = frontend.neighborhood(neighborhood, city, state)
+        denny_tri = get_neighborhood(neighborhood, city, state)
 
         # Valide a City object is returned
         assert isinstance(denny_tri, wslocation.Neighborhood)
