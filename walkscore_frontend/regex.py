@@ -39,43 +39,13 @@ def parse_data_points(content):
         for data_attribute in regex_filters[data_type].keys():
             value = None
             if data_type == 'int':
-                value = regex_page_data_int(regex_filters[data_type][data_attribute], content)
+                value = regex_page_data(regex_filters[data_type][data_attribute], content, 'int')
             elif data_type == 'float':
-                value = regex_page_data_float(regex_filters[data_type][data_attribute], content)
+                value = regex_page_data(regex_filters[data_type][data_attribute], content, 'float')
             elif data_type == 'table':
                 value = regex_page_data_table(regex_filters[data_type][data_attribute], content)
             parsed_data[data_attribute] = value
     return parsed_data
-
-def regex_page_data_int(pattern, content):
-    """
-    Extract an integer value from the text based on a pattern.
-    
-    :param pattern: regex pattern to match against
-    :param content: content to search
-    :returns: first int result for the given match
-    :rtype: int
-    """
-    int_result = regex_page_data(pattern, content)
-    if int_result is not None:
-        int_result = int(int_result)
-    return int_result
-
-
-def regex_page_data_float(pattern, content):
-    """
-    Extract a floating point value from the text based on a pattern.
-    
-    :param pattern: regex pattern to match against
-    :param content: content to search
-    :returns: first float result for the given match
-    :rtype: float
-    """
-    float_result = regex_page_data(pattern, content)
-    if float_result is not None:
-        float_result = float(float_result)
-    return float_result
-
 
 def regex_page_data_table(pattern, content):
     """
@@ -109,7 +79,7 @@ def regex_page_data_table(pattern, content):
         return None
 
 
-def regex_page_data(pattern, content):
+def regex_page_data(pattern, content, rtype = None):
     """
     Get a value from page data based on a regex pattern.
     
@@ -124,6 +94,11 @@ def regex_page_data(pattern, content):
         result = result.group(1)
         if ',' in result:
             result = result.replace(',', '')
-        return result
+        if rtype == 'int':
+            return int(result)
+        elif rtype == 'float':
+            return float(result)
+        else:
+            return result
     else:
         return None
