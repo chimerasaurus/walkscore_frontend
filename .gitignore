@@ -17,3 +17,8 @@
 
 # Cloude9 IDE folder
 *.c9/
+
+# Documentation builds
+_build
+_static
+_templates
