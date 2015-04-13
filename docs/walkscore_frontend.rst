@@ -1,4 +1,4 @@
-Walkscore Frontend Modules
+Modules & Methods
 ==========================
 
 frontend

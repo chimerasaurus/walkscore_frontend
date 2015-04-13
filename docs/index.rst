@@ -18,8 +18,8 @@ Contents:
    walkscore_frontend.rst
 
 You can find this module on 
-`GitHub <https://github.com/evilsoapbox/walkscore_frontend>` or 
-`PyPi <https://pypi.python.org/pypi?:action=display&name=walkscore_frontend/>`.
+`GitHub <https://github.com/evilsoapbox/walkscore_frontend>`_ or 
+`PyPi <https://pypi.python.org/pypi?:action=display&name=walkscore_frontend/>`_.
 
 
 Indices and tables

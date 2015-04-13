@@ -1,9 +1,21 @@
+"""
+Handles regular expression (regex) parsing for the walkscore_frontend module.
+"""
+
+# Imports for this module
 from bs4 import BeautifulSoup
 import re
 
-def regex_page_data_int(pattern, html):
-    """Extract an integer value from the page based on a pattern."""
-    result = regex_page_data(pattern, html)
+def regex_page_data_int(pattern, content):
+    """
+    Extract an integer value from the text based on a pattern.
+    
+    :param pattern: regex pattern to match against
+    :param content: content to search
+    :returns: first result for the given match
+    :rtype: int
+    """
+    result = regex_page_data(pattern, content)
     if result is not None:
         if ',' in result:
             result = result.replace(',', '')
@@ -11,9 +23,16 @@ def regex_page_data_int(pattern, html):
     return result
 
 
-def regex_page_data_float(pattern, html):
-    """Extract a floating point value from the page based on a pattern."""
-    result = regex_page_data(pattern, html)
+def regex_page_data_float(pattern, content):
+    """
+    Extract a floating point value from the text based on a pattern.
+    
+    :param pattern: regex pattern to match against
+    :param content: content to search
+    :returns: first result for the given match
+    :rtype: float
+    """
+    result = regex_page_data(pattern, content)
     if result is not None:
         if ',' in result:
             result = result.replace(',', '')
@@ -21,9 +40,16 @@ def regex_page_data_float(pattern, html):
     return result
 
 
-def regex_page_data_table(pattern, html):
-    """Extract data from a table on the page based on an id and value."""
-    soup = BeautifulSoup(html)
+def regex_page_data_table(pattern, content):
+    """
+    Extract data from a table on the text based on an id and value.
+    
+    :param pattern: id and value of element to parse
+    :param content: content to search
+    :returns: array of data from the table
+    :rtype: string array
+    """
+    soup = BeautifulSoup(content)
     attributes = pattern.split('=')
     table_data = []
     table = soup.find("table", attrs={attributes[0]:attributes[1]})
@@ -55,9 +81,16 @@ def regex_page_data_table(pattern, html):
         return None
 
 
-def regex_page_data(pattern, html):
-    """Get a value from page data based on a regex pattern. """
-    result = re.search(pattern, html)
+def regex_page_data(pattern, content):
+    """
+    Get a value from page data based on a regex pattern.
+    :param pattern: regex pattern to match against
+    :param content: content to search
+    :returns: first result for the given match
+    :rtype: object
+    """
+    
+    result = re.search(pattern, content)
     if result is not None:
         return result.group(1)
     else:
