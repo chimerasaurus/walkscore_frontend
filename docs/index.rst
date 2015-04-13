@@ -10,6 +10,8 @@ Contents:
  
 .. toctree::
    :maxdepth: 2
+   
+   walkscore_frontend.rst
 
 
 Indices and tables

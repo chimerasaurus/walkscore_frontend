@@ -1,13 +1,6 @@
 walkscore_frontend package
 ==========================
 
-Subpackages
------------
-
-.. toctree::
-
-    walkscore_frontend.tests
-
 Submodules
 ----------
 
@@ -31,14 +24,6 @@ walkscore_frontend.regex module
 -------------------------------
 
 .. automodule:: walkscore_frontend.regex
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-walkscore_frontend.setup module
--------------------------------
-
-.. automodule:: walkscore_frontend.setup
     :members:
     :undoc-members:
     :show-inheritance:
